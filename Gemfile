@@ -14,6 +14,7 @@ gem 'rails', '4.0.2'
 	group :development, :test do
 	  gem 'sqlite3'
 	  gem 'rspec-rails', '2.13.1'  #access to RSpec generators
+	  gem 'faker'  # Create fake data in dev and tests
 	end
 
 	# Use Oracle in development i.e., primary or legacy db's
@@ -53,6 +54,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-ui-themes'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -63,10 +66,14 @@ gem 'jbuilder', '~> 1.2'
 # Mobile First Responsive Design
 gem 'foundation-rails'
 
+# Create Database Tables
+gem 'jquery-datatables-rails', '~> 2.2.3'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
 
 
 # Use ActiveModel has_secure_password

@@ -30,12 +30,19 @@
 
       <!-- Left Nav Section -->
       <ul class="left">
-        <li><a href="#">Lt Item 1</a></li>
         <li class="has-dropdown">
-          <a href="#">Lt Item 2</a>
+          <a href="#">Patients</a>
           <ul class="dropdown">
-            <li><a href="#">Drop 1</a></li>
-            <li><a href="#">Drop 2</a></li>
+            <!-- <li><a href="#">Lt Item 1</a></li> -->
+            <li><a href="#">Ward Builder</a></li>
+            <li><%= link_to("Patient List", pats_path) %></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#">Housing</a>
+          <ul class="dropdown">
+            <li><a href="#">Housing Builder</a></li>
+            <li><a href="#">Tracker</a></li>
             <li class="has-dropdown">
               <a href="#">Nested Drop</a>
               <ul class="dropdown">
