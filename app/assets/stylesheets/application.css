@@ -1,7 +1,8 @@
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
- *
+ *    require dataTables/jquery.dataTables.myfoundation
+ *    
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
@@ -12,6 +13,6 @@
  *= require jquery.ui.all
  *= require jquery-ui/redmond
  *= require foundation_and_overrides
- *= require dataTables/jquery.dataTables.foundation
+ *= require dataTables/jquery.dataTables.myfoundation
  *= require_tree .
  */
