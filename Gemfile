@@ -66,8 +66,12 @@ gem 'jbuilder', '~> 1.2'
 # Mobile First Responsive Design
 gem 'foundation-rails'
 
-# Create Database Tables
-gem 'jquery-datatables-rails', '~> 2.2.3'
+# Create Database Tablesf from HTML
+	# gem 'jquery-datatables-rails', '~> 2.2.3'  # gave v2.2.3
+# Add serverside functionality (v large db) serches done by server, datatables does the drawing
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+gem 'ajax-datatables-rails'
+gem 'will_paginate', '~> 3.0'	# ajax-database-rails uses one of the 3 main paginators
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

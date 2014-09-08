@@ -4,5 +4,8 @@
 
 # sPaginationType: "full_numbers"
 jQuery ->
-	$('#pats').dataTable()
+	$('#pats').dataTable
+	  processing: true
+	  serverSide: true
+	  ajax: $('#pats').data('source')
 	  

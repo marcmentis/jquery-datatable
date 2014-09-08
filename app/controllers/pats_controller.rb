@@ -4,7 +4,12 @@ class PatsController < ApplicationController
   # GET /pats
   # GET /pats.json
   def index
-    @pats = Pat.all
+    # @pats = Pat.all
+    respond_to do |format|
+      format.html
+      format.json {render json: PatDatatable.new(view_context)}
+        # PatDatatable is a class we created to generate the appropriate json for 'datatables')
+    end
   end
 
   # GET /pats/1
