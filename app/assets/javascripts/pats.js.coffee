@@ -8,4 +8,7 @@ jQuery ->
 	  processing: true
 	  serverSide: true
 	  ajax: $('#pats').data('source')
+	  "dom": '<"top"f>rt<"bottom"ip><"clear">'
+	  # "dom": '<"top"f>rt<"bottom"ilp><"clear">'
+	  # "dom": '<"top"i>rt<"bottom"flp><"clear">'
 	  

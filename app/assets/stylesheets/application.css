@@ -14,5 +14,6 @@
  *= require jquery-ui/redmond
  *= require dataTables/jquery.dataTables.myfoundation
  *= require foundation_and_overrides
+ *= require more_foundation
  *= require_tree .
  */
