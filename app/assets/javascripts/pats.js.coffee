@@ -17,9 +17,14 @@ $(document).ready ->
     ajax: $('#pats').data('source')
     "dom": '<"top"f>rt<"bottom"ip><"clear">'
 
-  $('#pats tbody').on 'click', 'tr', -> 
-    name = $('td', this).eq(0).text()
-    alert(name)
+  $('#pats tbody')
+    .on 'click', 'tr', -> 
+      name = $('td', this).eq(0).text()
+      alert(name)
+    .on 'mouseover', 'tr', ->
+      $('td', this).addClass('server_hover')
+    .on 'mouseleave', 'tr', ->
+      $('td', this).removeClass('server_hover')    
 
 	   
 
