@@ -3,6 +3,26 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 # sPaginationType: "full_numbers"
-jQuery ->
-	$('#pats').dataTable()
+#jQuery ->
+  #$('#pats').dataTable 
+
+$(document).ready ->
+  $('#pats').dataTable()
+
+  $('#pats tbody').on 'click', 'tr', ->
+    name = $('td', this).eq(0).text()
+    alert(name)
+
+
+
+   	 
+
+ 
+
+
+
+    
+
+
+
 	  
