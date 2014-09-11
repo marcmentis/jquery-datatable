@@ -16,13 +16,8 @@ $(document).ready ->
     serverSide: true
     ajax: $('#pats').data('source')
     "dom": '<"top"f>rt<"bottom"ip><"clear">'
-    # "columnDefs": [
-    # 	"targets": [0];
-    # 	"visible": false
-    # ]
 
-
-  $('#pats tbody').on 'click', 'tr', ->
+  $('#pats tbody').on 'click', 'tr', -> 
     name = $('td', this).eq(0).text()
     alert(name)
 
