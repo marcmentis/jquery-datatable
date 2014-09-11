@@ -9,9 +9,11 @@
 $(document).ready ->
   $('#pats').dataTable()
 
-  $('#pats tbody').on 'click', 'tr', ->
-    name = $('td', this).eq(0).text()
-    alert(name)
+  $('#pats tbody')
+  	.on 'click', 'tr', ->
+      name = $('td', this).eq(0).text()
+      alert(name)
+    .on 'mouseover'
 
 
 
