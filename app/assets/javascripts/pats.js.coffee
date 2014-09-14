@@ -21,18 +21,26 @@ $(document).on 'ready page:change', ->
 
   $('#pats tbody')
     .on 'click', 'tr', -> 
-      alert 'before getting row'
+      #alert 'before getting row'
       id = $('td', this).eq(3).text()
-      alert(id)
-      alert 'after getting row'
+      # alert(id)
+      # alert 'after getting row'
       # Try to access controller
-      $.ajax "/pats/"+id+"/edit",
-        type: "GET",      
-        dataType: 'javascript'
-        error: (jqXHR, testStatus, errorThrown) ->
-          $('body').append "AJAX Error: #{textStatus}"
-        success: (data, textStatus, jqXHR) ->
-          $('body').append "Successful AJAX call: " #{data}
+      # $.ajax "/pats/"+id+"/edit",
+      #   type: "GET",      
+      #   dataType: 'javascript'
+      #   error: (jqXHR, testStatus, errorThrown) ->
+      #     $('body').append "AJAX Error: #{textStatus}"
+      #   success: (data, textStatus, jqXHR) ->
+      #     $('body').append "Successful AJAX call: " #{data}
+      $.ajax(
+        url: "/pats/"+id+"/edit",
+        type: "GET",
+        dataType: "json"
+      ).done (data) ->
+        alert(data.id)
+        $('#divPats').append data.id
+        $('#pat_firstname').val(data.firstname)
     .on 'mouseover', 'tr', ->
       $('td', this).addClass('server_hover')
     .on 'mouseleave', 'tr', ->
