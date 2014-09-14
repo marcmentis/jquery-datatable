@@ -5,6 +5,7 @@ class PatsController < ApplicationController
   # GET /pats.json
   def index
     @pats = Pat.all
+    @pat = Pat.new
   end
 
   # GET /pats/1
@@ -19,6 +20,10 @@ class PatsController < ApplicationController
 
   # GET /pats/1/edit
   def edit
+    respond_to do |format|
+      format.html { render 'edit' }
+      format.js {}
+    end
   end
 
   # POST /pats
@@ -29,9 +34,11 @@ class PatsController < ApplicationController
     respond_to do |format|
       if @pat.save
         format.html { redirect_to @pat, notice: 'Pat was successfully created.' }
+        format.js {}
         format.json { render action: 'show', status: :created, location: @pat }
       else
         format.html { render action: 'new' }
+        format.js {}
         format.json { render json: @pat.errors, status: :unprocessable_entity }
       end
     end
@@ -43,9 +50,11 @@ class PatsController < ApplicationController
     respond_to do |format|
       if @pat.update(pat_params)
         format.html { redirect_to @pat, notice: 'Pat was successfully updated.' }
+        format.js { }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
+        format.js {}
         format.json { render json: @pat.errors, status: :unprocessable_entity }
       end
     end

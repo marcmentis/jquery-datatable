@@ -16,22 +16,15 @@
       </thead>
 
       <tbody>
-        <% @pats.each do |pat| %>
-          <tr>
-            <td><%= pat.firstname %></td>
-            <td><%= pat.lastname %></td>
-            <td><%= pat.number %></td>
-            <td><%= link_to 'Show', pat %></td>
-            <td><%= link_to 'Edit', edit_pat_path(pat) %></td>
-            <td><%= link_to 'Destroy', pat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
+        <%= render @pats %>
       </tbody>
     </table>
   </div>
   <div class="large-4 columns">
-    <div><%= link_to 'New Pat', new_pat_path, class: "button tiny radius" %></div>
-    <p>some stuff</p>
+    <div><button type="button" id="bNewPat" class="button tiny radius">New Pat</button></div>
+    <div id="div_form">
+      <%= render 'form' %>
+    </div>
   </div>
 </div> 
 
