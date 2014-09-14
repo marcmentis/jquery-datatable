@@ -9,9 +9,9 @@ class PatDatatable < AjaxDatatablesRails::Base
     # Example: 'users.email'
   def sortable_columns
     @sortable_columns ||= [ 
+                            'pats.number',
                             'pats.firstname',
-                            'pats.lastname',
-                            'pats.number'
+                            'pats.lastname'
                           ]
   end
 
@@ -19,9 +19,9 @@ class PatDatatable < AjaxDatatablesRails::Base
     # Example: 'users.email'
   def searchable_columns
     @searchable_columns ||= [
+                              'pats.number',
                               'pats.firstname',
-                              'pats.lastname',
-                              'pats.number'
+                              'pats.lastname'
                             ]
   end
 
@@ -32,9 +32,11 @@ class PatDatatable < AjaxDatatablesRails::Base
   def data
     records.map do |record|
       [
+        record.number,
         record.firstname,
         record.lastname,
-        record.number
+        record.id
+        # link_to(record.firstname, edit_pat_path(record))
       ]
     end
   end

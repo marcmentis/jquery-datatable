@@ -2,21 +2,15 @@
 <div class="row">
   <h2>Listing pats</h2>
   <div class="large-8 columns">
-    <table id="pats" data-source="<%= pats_path(format: :json) %>">
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Number</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
+    <div id="divTable">
+      <%= render 'table' %>
+    </div>
   </div>
   <div class="large-4 columns">
-    <div><%= link_to 'New Pat', new_pat_path, class: "button tiny radius" %></div>
-    <p>some stuff</p>
+    <div><%= link_to 'New Pat', '#', class: "button tiny radius" %></div>
+    <div>
+      <%= render 'form' %>
+    </div>
   </div>
 </div>
 

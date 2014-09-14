@@ -5,6 +5,7 @@ class PatsController < ApplicationController
   # GET /pats.json
   def index
     # @pats = Pat.all
+    @pat = Pat.new
     respond_to do |format|
       format.html
       format.json {render json: PatDatatable.new(view_context)}
@@ -24,6 +25,12 @@ class PatsController < ApplicationController
 
   # GET /pats/1/edit
   def edit
+    respond_to do |format|
+      format.html {render action: 'edit'}
+      format.js {}
+      format.json {render action: 'show', status: :created, location: @pat} 
+    end
+
   end
 
   # POST /pats

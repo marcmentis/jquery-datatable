@@ -10,7 +10,9 @@
 
 # sPaginationType: "full_numbers"
 
-$(document).ready ->
+#$(document).ready ->
+$(document).on 'ready page:change', ->
+  #alert 'hello'
   $('#pats').dataTable
     processing: true
     serverSide: true
@@ -19,8 +21,18 @@ $(document).ready ->
 
   $('#pats tbody')
     .on 'click', 'tr', -> 
-      name = $('td', this).eq(0).text()
-      alert(name)
+      alert 'before getting row'
+      id = $('td', this).eq(3).text()
+      alert(id)
+      alert 'after getting row'
+      # Try to access controller
+      $.ajax "/pats/"+id+"/edit",
+        type: "GET",      
+        dataType: 'javascript'
+        error: (jqXHR, testStatus, errorThrown) ->
+          $('body').append "AJAX Error: #{textStatus}"
+        success: (data, textStatus, jqXHR) ->
+          $('body').append "Successful AJAX call: " #{data}
     .on 'mouseover', 'tr', ->
       $('td', this).addClass('server_hover')
     .on 'mouseleave', 'tr', ->
